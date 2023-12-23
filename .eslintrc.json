@@ -1,0 +1,52 @@
+  {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base",
+      "airbnb-typescript/base",
+      "prettier",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto",
+          "tabWidth": 2,
+          "useTabs": false,
+          "printWidth": 150,
+          "singleQuote": true
+        }
+      ],
+      "react/function-component-definition": [
+        "error",
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }
+      ],
+      "complexity": ["error", 25],
+      "no-negated-condition": "off",
+      "react/prop-types": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "import/extensions": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"],
+          "alias": {
+            "@": "./src"
+          }
+        }
+      }
+    }
+  }
